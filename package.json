@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/KevinUfkes/PortfolioCypress#readme",
   "devDependencies": {
-    "cypress": "^10.10.0"
+    "cypress": "^10.10.0",
+    "cypress-xpath": "^2.0.1"
   }
 }

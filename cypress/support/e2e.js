@@ -18,3 +18,8 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+require('cypress-xpath');
+
+import Navigation from './Planting_Management/Navigation'
+Cypress.env('navigation', new Navigation())

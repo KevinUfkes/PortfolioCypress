@@ -26,6 +26,11 @@
 
 const url = Cypress.config('baseUrl')
 
+Cypress.Commands.add('xpath_click', (elem) => {
+    cy.xpath(elem, {timeout:90000}).should('exist').first().click({force:true})
+})
+
 Cypress.Commands.add('visit_portfolio', () => {
     cy.visit(url)
 })
+

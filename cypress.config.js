@@ -7,6 +7,7 @@ module.exports = defineConfig({
     pageLoadTimeout: 90000,
     viewportWidth: 2560,
     viewportHeight: 1440,
+    // supportFile: 'cypress/support/index.js',
     
     setupNodeEvents(on, config) {
       // implement node event listeners here
