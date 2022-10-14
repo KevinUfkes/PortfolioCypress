@@ -30,6 +30,11 @@ Cypress.Commands.add('xpath_click', (elem) => {
     cy.xpath(elem, {timeout:90000}).should('exist').first().click({force:true})
 })
 
+Cypress.Commands.add('xpath_type', (elem, text) => {
+    cy.xpath(elem, {timeout:90000}).should('exist').type('{selectall}{backspace}', {force: true})
+    cy.xpath(elem).should('exist').type(text, {force: true})
+})
+
 Cypress.Commands.add('visit_portfolio', () => {
     cy.visit(url)
 })

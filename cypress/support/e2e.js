@@ -23,3 +23,6 @@ require('cypress-xpath');
 
 import Navigation from './Planting_Management/Navigation'
 Cypress.env('navigation', new Navigation())
+
+import Employees from './Planting_Management/Employees'
+Cypress.env('employees', new Employees())
