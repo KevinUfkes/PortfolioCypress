@@ -26,15 +26,18 @@
 
 const url = Cypress.config('baseUrl')
 
+// Click by XPath
 Cypress.Commands.add('xpath_click', (elem) => {
     cy.xpath(elem, {timeout:90000}).should('exist').first().click({force:true})
 })
 
+// Type by XPath
 Cypress.Commands.add('xpath_type', (elem, text) => {
     cy.xpath(elem, {timeout:90000}).should('exist').type('{selectall}{backspace}', {force: true})
     cy.xpath(elem).should('exist').type(text, {force: true})
 })
 
+// Visit www.kevinufkes.ca
 Cypress.Commands.add('visit_portfolio', () => {
     cy.visit(url)
 })
