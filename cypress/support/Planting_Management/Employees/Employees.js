@@ -4,7 +4,7 @@ class Employees {
         this.last_name_input = "//label[contains(text(), 'Last Name')]/..//input"
         this.email_input = "//label[contains(text(), 'Email')]/..//input"
         this.planter_checkbox = "//label[contains(text(), 'Planter')]/..//input"
-        this.creboss_checkbox = "//label[contains(text(), 'Crewboss')]/..//input"
+        this.crewboss_checkbox = "//label[contains(text(), 'Crewboss')]/..//input"
         this.add_employee_btn = "//button[contains(text(), 'Add Employee')]"
     }
     
@@ -30,6 +30,11 @@ class Employees {
         cy.xpath_click(this.add_employee_btn)
     }
 
+    // Click update employee
+    click_update_employee(email){
+        cy.xpath_click("//td[contains(text(), '" + email + "')]/..//button[contains(text(), 'Update')]")
+    }
+
     // Validate that the employee email does not exist on page.
     validate_employee_not_exists(email){
         cy.xpath("//td[contains(text(), '" + email + "')]").should('not.exist')
@@ -40,7 +45,7 @@ class Employees {
         cy.xpath("//td[contains(text(), '" + first_name + "')]").should('exist')
         cy.xpath("//td[contains(text(), '" + last_name + "')]").should('exist')
         cy.xpath("//td[contains(text(), '" + email + "')]").should('exist')
-        cy.xpath("//td[contains(text(), 'PM-00002@email.com')]/following-sibling::td/p[contains(text(), 'Planter')]").should('exist')
+        cy.xpath("//td[contains(text(), '" + email + "')]/following-sibling::td/p[contains(text(), 'Planter')]").should('exist')
     }
 }
 
