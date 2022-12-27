@@ -40,12 +40,12 @@ class Employees {
         cy.xpath("//td[contains(text(), '" + email + "')]").should('not.exist')
     }
 
-    // Validate that the planters first_name, last_name, email and role of "Planter" exists on page. 
-    validate_planter_create(first_name, last_name, email){
+    // Validate that the planters first_name, last_name, email and role exists on page. 
+    validate_planter_create(first_name, last_name, email, role){
         cy.xpath("//td[contains(text(), '" + first_name + "')]").should('exist')
         cy.xpath("//td[contains(text(), '" + last_name + "')]").should('exist')
         cy.xpath("//td[contains(text(), '" + email + "')]").should('exist')
-        cy.xpath("//td[contains(text(), '" + email + "')]/following-sibling::td/p[contains(text(), 'Planter')]").should('exist')
+        cy.xpath("//td[contains(text(), '" + email + "')]/following-sibling::td/p[contains(text(), '" + role +"')]").should('exist')
     }
 }
 

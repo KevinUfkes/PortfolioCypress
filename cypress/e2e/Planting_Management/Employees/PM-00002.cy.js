@@ -5,16 +5,11 @@ describe('PM-00002: Add New Planter', () => {
     const planter_first_name = "PM-00002_first_name"
     const planter_last_name = "PM-00002_last_name"
     const planter_email = "PM-00002@email.com"
+    const planter_role = "Planter"
 
     it('Test ability to create new employee', () => {
-        cy.log('I visit www.kevinufkes.ca homepage')
+        cy.log('I visit www.kevinufkes.ca/projects/planting_management homepage')
         cy.visit_portfolio()
-
-        cy.log('I navigate to Projects page')
-        nav.projects()
-
-        cy.log('I navigate to Planting Management Project')
-        nav.planting_management()
 
         cy.log('I navigate to Employees page')
         nav.employees()
@@ -35,7 +30,7 @@ describe('PM-00002: Add New Planter', () => {
         cy.wait(1000)
 
         cy.log('I verify the creation of new planter')
-        emp.validate_planter_create(planter_first_name, planter_last_name, planter_email)
+        emp.validate_planter_create(planter_first_name, planter_last_name, planter_email, planter_role)
 
         cy.log('I delete planter with email "PM-00002@email.com" if exists')
         emp.delete_employee_if_exists(planter_email)

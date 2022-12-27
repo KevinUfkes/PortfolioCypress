@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'https://www.kevinufkes.ca',
+    baseUrl: 'https://www.kevinufkes.ca/projects/planting_management',
     defaultCommandTimeout: 90000,
     pageLoadTimeout: 90000,
     viewportWidth: 2560,
